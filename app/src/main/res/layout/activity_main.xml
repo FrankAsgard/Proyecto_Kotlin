@@ -6,116 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
-    android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="460dp"
+    <include
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Iniciar"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:textAlignment="viewStart"
-            android:layout_gravity="start"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sesión"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:textAlignment="viewStart"
-            android:layout_gravity="start"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:hint="User name"
-            android:textColor="#D9D9D9"
-            android:textColorHint="#D9D9D9"
-            android:textSize="16sp"
-            android:background="@drawable/rounded_corner"
-            android:padding="18dp"
-            android:inputType="text"
-            android:id="@+id/username_input"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Password"
-            android:textColor="#D9D9D9"
-            android:textColorHint="#D9D9D9"
-            android:textSize="16sp"
-            android:background="@drawable/rounded_corner"
-            android:padding="18dp"
-            android:inputType="textPassword"
-            android:id="@+id/password_input"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ingresar"
-            android:textColor="#D9D9D9"
-            android:padding="18dp"
-            android:layout_marginTop="20dp"
-            android:textSize="16sp"
-            android:id="@+id/login_btn"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="¿No tienes cuenta?, crea una"
-            android:textSize="14sp"
-            android:textColor="#FFFFFF"
-            android:textAlignment="viewStart"
-            android:layout_gravity="start"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Continúa con Apple"
-            android:background="@drawable/rounded_corner_btn"
-            android:textColor="#D9D9D9"
-            android:padding="18dp"
-            android:layout_marginTop="100dp"
-            android:textSize="16sp"
-            android:id="@+id/login_btn_apple"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Continúa con Google"
-            android:background="@drawable/rounded_corner_btn"
-            android:textColor="#D9D9D9"
-            android:padding="18dp"
-            android:layout_marginTop="16dp"
-            android:textSize="16sp"
-            android:id="@+id/login_btn_google"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Continúa con Facebook"
-            android:background="@drawable/rounded_corner_btn"
-            android:textColor="#D9D9D9"
-            android:padding="18dp"
-            android:layout_marginTop="16dp"
-            android:textSize="16sp"
-            android:id="@+id/login_btn_facebook"/>
-
-    </LinearLayout>
-
+        layout="@layout/login_view" />
 
 </RelativeLayout>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Iniciar"
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Sesión"
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/username_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="User name"
+        android:inputType="text"
+        android:padding="18dp"
+        android:textColor="#D9D9D9"
+        android:textColorHint="#D9D9D9"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/error_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="El campo de usuario está vacío"
+        android:textColor="#FF0000"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="18dp"
+        android:textColor="#D9D9D9"
+        android:textColorHint="#D9D9D9"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/error_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="El campo de contraseña está vacío"
+        android:textColor="#FF0000"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿No tienes cuenta?"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:textAlignment="viewStart"
+        android:layout_gravity="start"
+        android:id="@+id/create_account_link"/>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="18dp"
+        android:text="Ingresar"
+        android:textColor="#D9D9D9"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/login_btn_apple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_btn"
+        android:padding="18dp"
+        android:text="Continúa con Apple"
+        android:textColor="#D9D9D9"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/login_btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_btn"
+        android:padding="18dp"
+        android:text="Continúa con Google"
+        android:textColor="#D9D9D9"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/login_btn_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner_btn"
+        android:padding="18dp"
+        android:text="Continúa con Facebook"
+        android:textColor="#D9D9D9"
+        android:textSize="16sp" />
+</LinearLayout>
