@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="El campo de usuario está vacío"
-        android:textColor="#FF0000"
+        android:textColor="#C6145E"
         android:textSize="14sp"
         android:visibility="invisible" />
 
@@ -52,7 +53,6 @@
         android:id="@+id/password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
         android:hint="Password"
         android:inputType="textPassword"
@@ -67,14 +67,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="El campo de contraseña está vacío"
-        android:textColor="#FF0000"
+        android:textColor="#C6145E"
         android:textSize="14sp"
         android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_general_btn"
+        android:padding="15dp"
+        android:text="Ingresar"
+        android:textColor="#D9D9D9"
+        android:textSize="16sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿No tienes cuenta?"
+        android:layout_marginTop="7dp"
         android:textSize="14sp"
         android:textColor="#FFFFFF"
         android:textAlignment="viewStart"
@@ -82,24 +93,16 @@
         android:id="@+id/create_account_link"/>
 
     <Button
-        android:id="@+id/login_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:padding="18dp"
-        android:text="Ingresar"
-        android:textColor="#D9D9D9"
-        android:textSize="16sp" />
-
-
-    <Button
         android:id="@+id/login_btn_apple"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/rounded_corner_btn"
-        android:padding="18dp"
-        android:text="Continúa con Apple"
+        android:drawableStart="@drawable/apple"
+        android:paddingHorizontal="15dp"
+        android:gravity="start|center_vertical"
+        android:text="                Continúa con Apple"
+        android:textAllCaps="false"
         android:textColor="#D9D9D9"
         android:textSize="16sp" />
 
@@ -107,10 +110,13 @@
         android:id="@+id/login_btn_google"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rounded_corner_btn"
-        android:padding="18dp"
-        android:text="Continúa con Google"
+        android:drawableStart="@drawable/google"
+        android:paddingHorizontal="15dp"
+        android:gravity="start|center_vertical"
+        android:text="                Continúa con Google"
+        android:textAllCaps="false"
         android:textColor="#D9D9D9"
         android:textSize="16sp" />
 
@@ -118,10 +124,14 @@
         android:id="@+id/login_btn_facebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rounded_corner_btn"
-        android:padding="18dp"
-        android:text="Continúa con Facebook"
+        android:drawableStart="@drawable/facebook"
+        android:paddingHorizontal="15dp"
+        android:gravity="start|center_vertical"
+        android:text="                Continúa con Apple"
+        android:textAllCaps="false"
         android:textColor="#D9D9D9"
         android:textSize="16sp" />
+
 </LinearLayout>
