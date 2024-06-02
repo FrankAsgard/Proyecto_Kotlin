@@ -11,19 +11,30 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp" />
 
+    <TextView
+        android:id="@+id/register_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Registrate"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/full_name_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/logo_image"
+        android:layout_below="@id/register_text"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_corner"
         android:hint="Nombre completo"
         android:inputType="text"
         android:padding="18dp"
         android:textColor="#D9D9D9"
-        android:textColorHint="#D9D9D9"
-         />
+        android:textColorHint="#D9D9D9" />
 
     <EditText
         android:id="@+id/username_input"
