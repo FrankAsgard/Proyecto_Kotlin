@@ -6,13 +6,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
+
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var loginManager: LoginManager
+    private lateinit var loginActivity: LoginActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this)
         setContentView(R.layout.activity_main)
 
         val usernameInput: EditText = findViewById(R.id.username_input)
@@ -22,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         val loginButton: Button = findViewById(R.id.login_btn)
         val createAccountLink: TextView = findViewById(R.id.create_account_link)
 
-        loginManager = LoginManager(this)
+        loginActivity = LoginActivity(this)
 
         loginButton.setOnClickListener {
-            loginManager.login(usernameInput, passwordInput, errorUsername, errorPassword)
+            loginActivity.login(usernameInput, passwordInput, errorUsername, errorPassword)
         }
 
         createAccountLink.setOnClickListener {
