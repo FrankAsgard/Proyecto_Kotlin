@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
-class LoginManager(private val context: Context) {
+class LoginActivity(private val context: Context) {
 
     fun login(usernameInput: EditText, passwordInput: EditText, errorUsername: TextView, errorPassword: TextView) {
         val username = usernameInput.text.toString()
@@ -30,7 +30,6 @@ class LoginManager(private val context: Context) {
         }
 
         if (valid) {
-            // Proceed to the welcome screen
             val intent = Intent(context, WelcomeActivity::class.java)
             context.startActivity(intent)
         } else {

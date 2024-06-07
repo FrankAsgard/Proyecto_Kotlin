@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "897781129763",
+    "project_id": "shopnow-63ff5",
+    "storage_bucket": "shopnow-63ff5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897781129763:android:7be44d52c64b3dff380796",
+        "android_client_info": {
+          "package_name": "com.example.shopnow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3jRT_M4SLJigtMFNvafgzZ9DO1HOlpPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
