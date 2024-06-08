@@ -37,6 +37,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-firestore")
+    implementation ("com.google.firebase:firebase-auth:21.0.1")
     implementation ("org.mindrot:jbcrypt:0.4")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
