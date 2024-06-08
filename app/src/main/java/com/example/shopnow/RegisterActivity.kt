@@ -9,16 +9,12 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
-import com.example.shopnow.models.Role
+import com.example.shopnow.auth.RegisterHelper
 import com.example.shopnow.models.User
 import com.example.shopnow.utils.ProgressDialogFragment
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import org.mindrot.jbcrypt.BCrypt
 
 class RegisterActivity : AppCompatActivity() {
 
-    private val db = Firebase.firestore
     private lateinit var usernameInput: EditText
     private lateinit var passwordInput: EditText
     private lateinit var emailInput: EditText
@@ -26,12 +22,14 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var registerButton: Button
     private lateinit var loginLink: TextView
     private lateinit var progressDialog: DialogFragment
+    private lateinit var registerHelper: RegisterHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         initializeViews()
+        registerHelper = RegisterHelper(this, progressDialog)
 
         registerButton.setOnClickListener {
             val username = usernameInput.text.toString().trim()
@@ -43,7 +41,10 @@ class RegisterActivity : AppCompatActivity() {
                 showErrorDialog("Por favor completa todos los campos.")
             } else {
                 progressDialog.show(supportFragmentManager, "progress_dialog")
-                checkUserExists(User(null, username, password, email, fullName))
+                registerHelper.registerUser(User(null, username, password, email, fullName),
+                    { showSuccessDialog() },
+                    { message -> showErrorDialog(message) }
+                )
             }
         }
 
@@ -62,61 +63,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun fieldsAreEmpty(vararg fields: String): Boolean {
         return fields.any { it.isEmpty() }
-    }
-
-    private fun checkUserExists(user: User) {
-        db.collection("users").whereEqualTo("username", user.username).get()
-            .addOnSuccessListener { result ->
-                if (!result.isEmpty) {
-                    progressDialog.dismiss()
-                    showErrorDialog("El nombre de usuario ya está registrado.")
-                } else {
-                    checkEmailExists(user)
-                }
-            }
-            .addOnFailureListener { exception ->
-                progressDialog.dismiss()
-                showErrorDialog("Error al verificar el nombre de usuario: ${exception.message}")
-            }
-    }
-
-    private fun checkEmailExists(user: User) {
-        db.collection("users").whereEqualTo("email", user.email).get()
-            .addOnSuccessListener { result ->
-                if (!result.isEmpty) {
-                    progressDialog.dismiss()
-                    showErrorDialog("El email ya está registrado.")
-                } else {
-                    saveUser(user)
-                }
-            }
-            .addOnFailureListener { exception ->
-                progressDialog.dismiss()
-                showErrorDialog("Error al verificar el email: ${exception.message}")
-            }
-    }
-
-    private fun saveUser(user: User) {
-        val hashedPassword = BCrypt.hashpw(user.password, BCrypt.gensalt())
-        val userId = db.collection("users").document().id
-        val newUser = hashMapOf(
-            "userId" to userId,
-            "username" to user.username,
-            "password" to hashedPassword,
-            "email" to user.email,
-            "fullName" to user.fullName,
-            "role" to Role.CLIENT
-        )
-
-        db.collection("users").document(userId).set(newUser)
-            .addOnSuccessListener {
-                progressDialog.dismiss()
-                showSuccessDialog()
-            }
-            .addOnFailureListener { exception ->
-                progressDialog.dismiss()
-                showErrorDialog("Error al registrar el usuario: ${exception.message}")
-            }
     }
 
     private fun showSuccessDialog() {

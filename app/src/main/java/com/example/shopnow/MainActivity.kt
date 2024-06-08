@@ -20,15 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         val usernameInput: EditText = findViewById(R.id.username_input)
         val passwordInput: EditText = findViewById(R.id.password_input)
-        val errorUsername: TextView = findViewById(R.id.error_username)
-        val errorPassword: TextView = findViewById(R.id.error_password)
         val loginButton: Button = findViewById(R.id.login_btn)
         val createAccountLink: TextView = findViewById(R.id.create_account_link)
 
         loginActivity = LoginActivity(this)
 
         loginButton.setOnClickListener {
-            loginActivity.login(usernameInput, passwordInput, errorUsername, errorPassword)
+            loginActivity.login(usernameInput, passwordInput)
         }
 
         createAccountLink.setOnClickListener {
